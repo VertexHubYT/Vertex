@@ -11,8 +11,8 @@ local function layouts(player)
 local Load = "Load"
 local check = "Check"
 
-game:GetService("ReplicatedStorage").DestroyAll:InvokeServer()
-        
+ game:GetService("ReplicatedStorage").DestroyAll:InvokeServer()
+
 if _G.Use_Second_Layout == false then
     game:GetService("ReplicatedStorage").DestroyAll:InvokeServer()
     game:GetService("ReplicatedStorage").Layouts:InvokeServer(Load, _G.Starting_Layout)
@@ -21,7 +21,7 @@ elseif _G.Use_Second_Layout == true then
     game:GetService("ReplicatedStorage").Layouts:InvokeServer(Load, _G.Starting_Layout)
     wait(_G.Second_Timer)
     game:GetService("ReplicatedStorage").DestroyAll:InvokeServer()
-    game:GetService("ReplicatedStorage").Layouts:InvokeServer(Load, _G.Second_Layout, _G.Items.costs)
+    game:GetService("ReplicatedStorage").Layouts:InvokeServer(Load, _G.Second_Layout, unpack(_G.Items))
     end
 end
 
