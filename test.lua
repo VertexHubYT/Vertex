@@ -11,6 +11,8 @@ local function layouts(player)
 local Load = "Load"
 local check = "Check"
 
+game:GetService("ReplicatedStorage").DestroyAll:InvokeServer()
+        
 if _G.Use_Second_Layout == false then
     game:GetService("ReplicatedStorage").DestroyAll:InvokeServer()
     game:GetService("ReplicatedStorage").Layouts:InvokeServer(Load, _G.Starting_Layout)
